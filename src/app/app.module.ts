@@ -6,6 +6,7 @@ import { ApadrinhamentoModule } from './apadrinhamento/apadrinhamento.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeaderModule } from './header/header.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     HeaderModule,
-    ApadrinhamentoModule
+    ApadrinhamentoModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
