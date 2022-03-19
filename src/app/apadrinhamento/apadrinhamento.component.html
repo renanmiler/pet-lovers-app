@@ -1,8 +1,9 @@
 <div class="flex-column">
+    <app-apadrinhamento-form #formApadrinhamento></app-apadrinhamento-form>
     <div class="justify-content-center">
         <p-toolbar>
             <div class="p-toolbar-group-left">
-                <p-button class="mr-2" label="Novo" icon="pi pi-plus"></p-button>
+                <p-button class="mr-2" label="Novo" icon="pi pi-plus" (onClick)="formApadrinhamento.setVisible()"></p-button>
                 <p-button label="Procurar" icon="pi pi-search" styleClass="p-button-success"></p-button>
                 
             </div>

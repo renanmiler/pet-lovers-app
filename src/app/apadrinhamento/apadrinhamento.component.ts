@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApadrinhamentoFormComponent } from './apadrinhamento-form/apadrinhamento-form.component';
 
 @Component({
   selector: 'app-apadrinhamento',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApadrinhamentoComponent implements OnInit {
   dogs: any = [];
+  form: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
@@ -80,5 +82,8 @@ export class ApadrinhamentoComponent implements OnInit {
    
   };
 
+  formVisible(){
+    this.form = true;
+  }
 
 }

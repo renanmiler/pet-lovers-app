@@ -5,14 +5,18 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { ToolbarModule } from 'primeng/toolbar';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputTextModule } from 'primeng/inputtext';
 
 import { ApadrinhamentoRoutingModule } from './apadrinhamento-routing.module';
 import { ApadrinhamentoComponent } from './apadrinhamento.component';
+import { ApadrinhamentoFormComponent } from './apadrinhamento-form/apadrinhamento-form.component';
 
 
 @NgModule({
   declarations: [
-    ApadrinhamentoComponent
+    ApadrinhamentoComponent,
+    ApadrinhamentoFormComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,9 @@ import { ApadrinhamentoComponent } from './apadrinhamento.component';
     CardModule,
     ButtonModule,
     DialogModule,
-    ToolbarModule
+    ToolbarModule,
+    InputTextareaModule,
+    InputTextModule 
   ],
   exports :
   [

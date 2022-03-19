@@ -1,0 +1,32 @@
+<p-dialog #form header="Novo Apadrinhamento" [(visible)]="formVisible" [draggable]="false" [resizable]="false" closeIcon="false" [modal]="true" position="center">
+    <ng-template pTemplate="content">
+        <form>
+            <div class="formgrid grid" style="width: 700px;">
+                <div class="field grid align-items-center">
+                        <div class="col-md-8">
+                            <div class="flex flex-row">
+                            <label for="nome" class="block"><b class="text-xl">Nome: *</b></label>
+                            <input pInputText type="text" class="ml-2">
+                        </div>
+                    </div>
+                </div>        
+                <div class="field grid align-items-center">
+                    <div class="col-md-4">
+                        <div class="flex flex-row">
+                            <label for="regiao" class="block"><b class="text-xl">Região: *</b></label>
+                            <input pInputText type="text" class="ml-2" (onClick)="this.close();">
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </form>
+    </ng-template>
+    
+        
+    <ng-template pTemplate="footer">
+        <div class="m-2">
+            <button pButton label="Concluir"></button>
+        </div>
+    </ng-template>
+
+</p-dialog>
