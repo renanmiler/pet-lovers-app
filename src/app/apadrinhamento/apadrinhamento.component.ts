@@ -91,4 +91,8 @@ export class ApadrinhamentoComponent implements OnInit {
     this.search = true
   }
 
+  searchHider(){
+    this.search = false
+  }
+
 }
