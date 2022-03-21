@@ -9,6 +9,7 @@ import { ApadrinhamentoFormComponent } from './apadrinhamento-form/apadrinhament
 export class ApadrinhamentoComponent implements OnInit {
   dogs: any = [];
   form: boolean = true;
+  search: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -84,6 +85,10 @@ export class ApadrinhamentoComponent implements OnInit {
 
   formVisible(){
     this.form = true;
+  }
+
+  searchVisible(){
+    this.search = true
   }
 
 }
