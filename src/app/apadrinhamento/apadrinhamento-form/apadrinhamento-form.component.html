@@ -1,23 +1,52 @@
 <p-dialog #form header="Novo Apadrinhamento" [(visible)]="formVisible" [draggable]="false" [resizable]="false" closeIcon="false" [modal]="true" position="center">
+    
     <ng-template pTemplate="content">
         <form>
-            <div class="formgrid grid" style="width: 700px;">
-                <div class="field grid align-items-center">
-                        <div class="grid col-md-4">
-                            <div class="flex flex-row">
-                            <label for="nome" class="block"><b class="text-xl">Nome: *</b></label>
-                            <input pInputText type="text" class="ml-2">
-                        </div>
+            <h5>Informações do animal</h5>
+            <div class="grid p-fluid">
+                <div class="col-12 md:col-4">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input type="text" pInputText placeholder="Nome do pet">         
                     </div>
-                </div>        
-                <div class="field grid align-items-center">
-                    <div class="col-md-4">
-                        <div class="flex flex-row">
-                            <label for="regiao" class="block"><b class="text-xl">Região: *</b></label>
-                            <input pInputText type="text" class="ml-2">
-                        </div>
+                </div>
+                
+                <div class="col-12 md:col-4">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input type="text" pInputText placeholder="Qual o tipo?">     
                     </div>
-                </div>        
+                </div>
+                        
+                <div class="col-12 md:col-4">
+                    <div class="p-inputgroup">
+                     
+                        <input type="text" pInputText placeholder="Envie uma foto do animal">      
+                    </div>
+                </div>
+            </div>
+                
+            <h5>Região</h5>
+            <div class="grid">
+                <div class="col-12">
+                    <div class="p-inputgroup">
+                        <input type="text" pInputText placeholder="Estado">   
+                        <input type="text" pInputText placeholder="Cidade">       
+                    </div>
+                </div>
+            </div>
+            
+            <h5>Info sobre o apadrinhamento</h5>
+            <div class="grid">
+                <div class="col-12">
+                    <div class="p-inputgroup">
+                      
+                        <span class="p-float-label">
+                            <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+                            <label for="float-input">Quais doações o animal necessita?</label>
+                        </span> 
+                    </div>
+                </div>
             </div>
         </form>
     </ng-template>
