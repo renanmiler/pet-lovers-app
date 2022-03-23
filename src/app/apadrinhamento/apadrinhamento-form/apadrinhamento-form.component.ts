@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 interface pets{
   type : string; 
@@ -7,15 +8,29 @@ interface pets{
 @Component({
   selector: 'app-apadrinhamento-form',
   templateUrl: './apadrinhamento-form.component.html',
-  styleUrls: ['./apadrinhamento-form.component.scss']
+  styleUrls: ['./apadrinhamento-form.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ApadrinhamentoFormComponent implements OnInit {
 
   formVisible : boolean;
   petypes: pets[];
   pet : any = []; 
+  stepsMenu : MenuItem [] = []
 
-  constructor() { this.formVisible = false; this.petypes = [{type : 'Cachorro'},{type : 'Gatos'}] }
+  constructor() { 
+    this.formVisible = false; 
+    this.petypes = [
+      {type : 'Cachorro'},
+      {type : 'Gatos'}];
+    this.stepsMenu = [
+      {label : "Informações do Pet"}, 
+      {label : "Vacinas"}, 
+      {label : "Fotos"}, 
+      {label : "Forma de Apadrinhamento"}];  
+      
+    }
+      
 
   ngOnInit(): void {
   }

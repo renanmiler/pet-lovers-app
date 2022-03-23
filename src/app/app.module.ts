@@ -20,6 +20,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
 import { MenubarModule } from 'primeng/menubar';
+import { StepsModule } from 'primeng/steps';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MenubarModule } from 'primeng/menubar';
     InputTextModule,
     DropdownModule,
     FileUploadModule,
-    MenubarModule
+    MenubarModule,
+    StepsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

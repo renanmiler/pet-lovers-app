@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApadrinhamentoFormComponent } from './apadrinhamento-form/apadrinhamento-form.component';
 
 @Component({
   selector: 'app-apadrinhamento',
