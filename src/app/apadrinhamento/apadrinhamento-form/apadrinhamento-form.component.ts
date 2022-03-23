@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+interface pets{
+  type : string; 
+}
+
 @Component({
   selector: 'app-apadrinhamento-form',
   templateUrl: './apadrinhamento-form.component.html',
@@ -8,8 +12,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ApadrinhamentoFormComponent implements OnInit {
 
   formVisible : boolean;
+  petypes: pets[];
+  pet : any = []; 
 
-  constructor() { this.formVisible = false; }
+  constructor() { this.formVisible = false; this.petypes = [{type : 'Cachorro'},{type : 'Gatos'}] }
 
   ngOnInit(): void {
   }

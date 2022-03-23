@@ -7,6 +7,8 @@ import { DialogModule } from 'primeng/dialog';
 import { ToolbarModule } from 'primeng/toolbar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
+import { FileUploadModule } from 'primeng/fileupload';
 
 import { ApadrinhamentoRoutingModule } from './apadrinhamento-routing.module';
 import { ApadrinhamentoComponent } from './apadrinhamento.component';
@@ -27,7 +29,9 @@ import { ApadrinhamentoFormComponent } from './apadrinhamento-form/apadrinhament
     DialogModule,
     ToolbarModule,
     InputTextareaModule,
-    InputTextModule 
+    InputTextModule,
+    DropdownModule,
+    FileUploadModule
   ],
   exports :
   [

@@ -1,9 +1,15 @@
-<p-dialog #form header="Novo Apadrinhamento" [(visible)]="formVisible" [draggable]="false" [resizable]="false" closeIcon="false" [modal]="true" position="center">
+<p-dialog #form header="Novo Apadrinhamento" [(visible)]="formVisible" [closable]="false" [draggable]="false" [resizable]="false" closeIcon="false" [modal]="true" position="center">
     
     <ng-template pTemplate="content">
         <form>
+            
+            <div class="col-12 md:col-4">
+
+            </div>
+            
             <h5>Informações do animal</h5>
             <div class="grid p-fluid">
+               
                 <div class="col-12 md:col-4">
                     <div class="p-inputgroup">
                         <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
@@ -12,9 +18,8 @@
                 </div>
                 
                 <div class="col-12 md:col-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                        <input type="text" pInputText placeholder="Qual o tipo?">     
+                    <div>
+                        <p-dropdown placeholder="Qual o pet?" [options]="petypes" optionLabel="type"></p-dropdown>     
                     </div>
                 </div>
                         
