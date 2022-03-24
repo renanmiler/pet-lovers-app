@@ -25,13 +25,13 @@
              </ng-template>
      
          <ng-template pTemplate="footer">
-             <p-dialog header={{dog.name}} [(visible)]="dog.display" [modal]="true" position="center">
+             <p-dialog header={{dog.name}} [(visible)]="dog.visible" [modal]="true" position="center">
                 <div class="flex overflow-y-hidden surface-overlay justify-content-center" style="height:400px">
                     <img alt="Image" src={{dog.img}} style="height: 400px; width: auto;">
                 </div>
              </p-dialog>
              <div class="flex justify-content-end">   
-                 <button pButton class="p-button-rounded" label="Ver mais" (click)="dog.display = true"></button>
+                 <button pButton class="p-button-rounded" label="Ver mais" (click)="dog.visible = true"></button>
              </div>
          </ng-template>
      </p-card>

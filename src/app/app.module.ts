@@ -22,6 +22,9 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { MenubarModule } from 'primeng/menubar';
 import { StepsModule } from 'primeng/steps';
 
+import { PetsService } from './services/pets.service';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,9 +47,10 @@ import { StepsModule } from 'primeng/steps';
     DropdownModule,
     FileUploadModule,
     MenubarModule,
-    StepsModule
+    StepsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PetsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
