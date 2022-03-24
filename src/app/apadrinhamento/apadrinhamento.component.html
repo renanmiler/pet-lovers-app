@@ -16,7 +16,7 @@
     </div>
     <div class="flex justify-content-center flex-wrap">
        
-     <p-card class="col-md-3 m-3 text-center shadow-4" header={{dog.name}} subheader={{dog.regiao}} [style]="{width: '360px'}" *ngFor="let dog of dogs">
+     <p-card class="col-md-3 m-3 text-center shadow-4" header={{dog.nome}} subheader={{dog.regiao}} [style]="{width: '360px'}" *ngFor="let dog of dogs">
          
              <ng-template pTemplate="header">
                  <div class="flex overflow-y-hidden surface-overlay justify-content-center" style="height:200px">
@@ -25,7 +25,7 @@
              </ng-template>
      
          <ng-template pTemplate="footer">
-             <p-dialog header={{dog.name}} [(visible)]="dog.visible" [modal]="true" position="center">
+             <p-dialog header={{dog.nome}} [(visible)]="dog.visible" [modal]="true" position="center">
                 <div class="flex overflow-y-hidden surface-overlay justify-content-center" style="height:400px">
                     <img alt="Image" src={{dog.img}} style="height: 400px; width: auto;">
                 </div>
