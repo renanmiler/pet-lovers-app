@@ -16,7 +16,8 @@ export class ApadrinhamentoFormComponent implements OnInit {
   formVisible : boolean;
   petypes: pets[];
   pet : any = []; 
-  stepsMenu : MenuItem [] = []
+  stepsMenu : MenuItem [] = [];
+  activeIndex : number = 0;
 
   constructor() { 
     this.formVisible = false; 
@@ -25,9 +26,9 @@ export class ApadrinhamentoFormComponent implements OnInit {
       {type : 'Gatos'}];
     this.stepsMenu = [
       {label : "Informações do Pet"}, 
-      {label : "Vacinas"}, 
+      {label : "Endereço"}, 
       {label : "Fotos"}, 
-      {label : "Forma de Apadrinhamento"}];  
+      {label : "Formas de Apadrinhamento"}];  
       
     }
       
