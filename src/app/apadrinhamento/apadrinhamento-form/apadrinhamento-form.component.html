@@ -7,11 +7,11 @@
             </div>
             <div *ngSwitchCase=0>
                 <div class="grid p-fluid">
-                    <div class="col-12 md:col-6">
+                    <div class="field col-12 md:col-6">
                         <div class="p-inputgroup">
-                            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                            <input type="text" name="nome" formControlName="nome" pInputText placeholder="Nome do pet">
+                                <input type="text" name="nome" formControlName="nome" (change)="validate()" pInputText placeholder="Nome do pet">
                         </div>
+                        <small *ngIf="!pet.nome.valid" class="p-error block">{{pet.nome.message}}</small>
                     </div>
                     
                     <div class="col-12 md:col-6">
@@ -31,19 +31,6 @@
                     <div class="col-12 md:col-6">
                         <div class="p-inputgroup">
                             <input type="text" pInputText formControlName="img" placeholder="Imagem">   
-                        </div>
-                    </div>
-                </div>
-                
-                <h5>Info sobre o apadrinhamento</h5>
-                <div class="grid">
-                    <div class="col-12">
-                        <div class="p-inputgroup">
-                          
-                            <span class="p-float-label">
-                                <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
-                                <label for="float-input">Quais doações o animal necessita?</label>
-                            </span> 
                         </div>
                     </div>
                 </div>
@@ -96,7 +83,7 @@
         <div class="m-2">
             <button pButton label="Voltar" class="p-button-rounded p-button-text" (click)=previousStep()></button>
             <button pButton *ngIf="getActiveIndex()!=3" label="Próximo" class="p-button-rounded p-button-outlined" (click)=nestStep()></button>
-            <button pButton #button *ngIf="getActiveIndex()==3" label="Concluir" class="p-button-rounded" (click)=nestStep()></button>
+            <button pButton *ngIf="getActiveIndex()==3" type="submit" label="Concluir" class="p-button-rounded" (click)=nestStep()></button>
         </div>
     </ng-template>
 

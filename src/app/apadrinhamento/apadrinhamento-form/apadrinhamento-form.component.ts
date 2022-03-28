@@ -22,7 +22,12 @@ export class ApadrinhamentoFormComponent implements OnInit {
   private petypes: any[];
   private stepsMenu : MenuItem [];
   private activeIndex : number = 0;
-  pet!: Pets;
+  pet = {
+    nome: {valid: true , message: 'O campo NOME é obrigatório.', value: ''},
+    regiao: {valid: true , message: 'O campo NOME é obrigatório.', value: ''},
+    img: {valid: true , message: 'O campo NOME é obrigatório.', value: ''}
+  }
+
 
     formApadrinhamento = this.fb.group({
                         nome: ['', [Validators.required]],
@@ -49,7 +54,6 @@ export class ApadrinhamentoFormComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.formApadrinhamento.controls['nome'].statusChanges.subscribe ( status => { console.log(status)})
   }
 
   getFormStatus(): boolean{
@@ -76,12 +80,16 @@ export class ApadrinhamentoFormComponent implements OnInit {
   }
   
   public nestStep(): void{
-    if (this.activeIndex < 3) {
+    if (this.activeIndex < 3 && this.pet.nome.valid) {
       this.activeIndex = this.activeIndex+1;
     }
-    else{
+    else if (this.activeIndex == 3){
+      this.savePet();
       this.close();
       this.activeIndex = 0;
+    }
+    else if (!this.pet.nome.valid){
+      
     }
   }
 
@@ -92,6 +100,17 @@ export class ApadrinhamentoFormComponent implements OnInit {
     else{
       this.close();
     }
+  }
+
+  public savePet(){
+    this.pet.nome.value = this.formApadrinhamento.controls['nome'].value;
+    this.pet.regiao.value = this.formApadrinhamento.controls['regiao'].value;
+    this.pet.img.value = this.formApadrinhamento.controls['img'].value;
+  }
+
+  validate(){
+    this.pet.nome.valid = this.formApadrinhamento.controls['nome'].valid;
+    
   }
 
 }
