@@ -11,7 +11,7 @@ export class PetsService {
   constructor( private request : HttpClient) { }
 
   getPets() : Observable<Pets[]>{
-     return this.request.get<Pets[]>('http://localhost:8080/api/pets');
+    return this.request.get<Pets[]>('http://localhost:8080/api/pets');
   }
 
 }

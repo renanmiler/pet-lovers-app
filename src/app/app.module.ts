@@ -22,8 +22,11 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { MenubarModule } from 'primeng/menubar';
 import { StepsModule } from 'primeng/steps';
 
+
+
 import { PetsService } from './services/pets.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,8 @@ import { HttpClientModule } from '@angular/common/http';
     FileUploadModule,
     MenubarModule,
     StepsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [PetsService],
   bootstrap: [AppComponent]
