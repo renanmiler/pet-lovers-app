@@ -12,9 +12,11 @@
             <p-button  icon="pi pi-search" styleClass="p-button-success p-button-rounded" (onClick)="this.searchVisible()"></p-button>      
             </div>
         </p-toolbar>
+        
     </div>
+    
     <div class="flex justify-content-center flex-wrap">
-       
+        <h5 class="w-2 text-center font-bold text-blue-500 mr-3 text-2xl w-10">Conheça nossos amigos que precisam de ajuda</h5>
      <p-card class="col-md-3 m-3 text-center shadow-4" header={{dog.nome}} subheader={{dog.regiao}} [style]="{width: '360px'}" *ngFor="let dog of dogs">
          
              <ng-template pTemplate="header">
