@@ -9,7 +9,7 @@
                 <div class="grid p-fluid">
                     <div class="field col-12 md:col-6">
                         <div class="p-inputgroup">
-                                <input type="text" name="nome" formControlName="nome" (change)="validate()" pInputText placeholder="Nome do pet">
+                                <input id="petName" type="text" name="nome" formControlName="nome" (change)="validate()" pInputText placeholder="Nome do pet">
                         </div>
                         <small *ngIf="!pet.nome.valid" class="p-error block">{{pet.nome.message}}</small>
                     </div>
