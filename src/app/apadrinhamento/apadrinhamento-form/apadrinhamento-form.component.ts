@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 import { FileUpload } from 'primeng/fileupload';
 import { Pets } from 'src/app/model/pets/pet';
+import { PetsService } from 'src/app/services/pets.service';
 
 
 
@@ -36,7 +37,7 @@ export class ApadrinhamentoFormComponent implements OnInit {
                         });
 
  
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private petservice: PetsService) { 
 
     this.formVisible = false; 
     this.petypes = [
@@ -84,7 +85,7 @@ export class ApadrinhamentoFormComponent implements OnInit {
       this.activeIndex = this.activeIndex+1;
     }
     else if (this.activeIndex == 3){
-      this.savePet();
+      this.onSubmit();
       this.close();
       this.activeIndex = 0;
     }
@@ -102,15 +103,17 @@ export class ApadrinhamentoFormComponent implements OnInit {
     }
   }
 
-  public savePet(){
+  public onSubmit(){
     this.pet.nome.value = this.formApadrinhamento.controls['nome'].value;
     this.pet.regiao.value = this.formApadrinhamento.controls['regiao'].value;
     this.pet.img.value = this.formApadrinhamento.controls['img'].value;
+  
+    let pets : Pets = new Pets(this.pet.nome.value, this.pet.regiao.value, this.pet.img.value);
+    this.petservice.save(pets).subscribe(response => {console.log('Salvo com sucesso')}, Error => {console.log('Erro ao salvar')})
   }
 
   validate(){
     this.pet.nome.valid = this.formApadrinhamento.controls['nome'].valid;
-    
   }
 
 }

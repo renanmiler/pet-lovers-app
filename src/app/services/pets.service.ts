@@ -14,4 +14,8 @@ export class PetsService {
     return this.request.get<Pets[]>('http://localhost:8080/api/pets');
   }
 
+  save(pet: Pets) : Observable<Pets>{
+    return this.request.post<Pets>('http://localhost:8080/api/pets', pet);
+  }
+
 }
